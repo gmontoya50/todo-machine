@@ -1,0 +1,30 @@
+body{
+    font-family: 'Raleway', sans-serif;
+}
+.TodoCounter{
+    text-align: center;
+    font-size: 12px;
+}
+
+.todoHeader{
+    background-color: #ffffff;
+}
+
+.bg-one-color{
+    background-color: #f4f6ff;
+}
+
+.redondeado{
+    border-bottom-right-radius: 1.25rem!important;
+    border-bottom-left-radius: 1.25rem!important;
+}
+
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    padding: 6px 0px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.42857;
+}
