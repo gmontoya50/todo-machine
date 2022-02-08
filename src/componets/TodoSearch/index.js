@@ -1,9 +1,8 @@
 import React from "react";
 import { Form } from "react-bootstrap";
-import { TodoContext } from "../../TodoContext";
 
-const TodoSearch = () => {
-  const {searchValue, setSearchValue} = React.useContext(TodoContext);
+
+const TodoSearch = ({searchValue, setSearchValue} ) => {
   const onSearchValueChange = (event) => {
     console.info(event.target.value);
     setSearchValue(event.target.value);
