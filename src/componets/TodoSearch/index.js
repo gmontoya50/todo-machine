@@ -2,7 +2,7 @@ import React from "react";
 import { Form } from "react-bootstrap";
 
 
-const TodoSearch = ({searchValue, setSearchValue} ) => {
+const TodoSearch = ({searchValue, setSearchValue, loading} ) => {
   const onSearchValueChange = (event) => {
     console.info(event.target.value);
     setSearchValue(event.target.value);
@@ -12,8 +12,10 @@ const TodoSearch = ({searchValue, setSearchValue} ) => {
       <Form.Control
         type="text"
         placeholder="Seach Task"
+        className="TodoSearch"
         onChange={onSearchValueChange}
         value={searchValue}
+        disabled={loading}
       />
       <Form.Text className="text-muted">
       Busqueda.

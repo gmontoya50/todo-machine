@@ -32,7 +32,7 @@ const App = () => {
       <Row className="justify-content-md-center">
         <Col md={4}>
           <div className="redondeado bg-white p-5 border">
-            <TodoHeader>
+            <TodoHeader loading={loading}>
               <TodoCounter
                 totalTodos={totalTodos}
                 completedTodos={completedTodos}
@@ -40,6 +40,7 @@ const App = () => {
               <TodoSearch
                 searchValue={searchValue}
                 setSearchValue={setSearchValue}
+                
               />
             </TodoHeader>
           </div>
