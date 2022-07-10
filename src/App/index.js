@@ -10,13 +10,14 @@ import { Modal } from "./../componets/Modal";
 import { TodoForm } from "../componets/TodoForm";
 import { SkeletoLoader } from "../componets/SkeletoLoader";
 import { TodoHeader } from "../componets/TodoHeader";
+import { ChangeALertWirhStirageListener } from "../componets/ChangeAlert";
 import "./../css/TodoCounter.css";
 
 const App = () => {
   const {
     error,
     loading,
-    searchedTodos, 
+    searchedTodos,
     onCompleted,
     onDeleted,
     openModal,
@@ -25,7 +26,8 @@ const App = () => {
     completedTodos,
     searchValue,
     setSearchValue,
-    addTodo, 
+    addTodo,
+    sincronizeTodos,
   } = useTodos();
   return (
     <Container className="bg-one-color">
@@ -40,7 +42,6 @@ const App = () => {
               <TodoSearch
                 searchValue={searchValue}
                 setSearchValue={setSearchValue}
-                
               />
             </TodoHeader>
           </div>
@@ -63,11 +64,18 @@ const App = () => {
       </Row>
       {!!openModal && (
         <Modal>
-          <TodoForm 
-            addTodo={addTodo} setOpenModal={setOpenModal}
-          />
+          <TodoForm addTodo={addTodo} setOpenModal={setOpenModal} />
         </Modal>
       )}
+      <Row className="justify-content-md-center mt-5 pt-3">
+        <Col md={4}>
+          <ChangeALertWirhStirageListener
+            sincronize={() => {
+              sincronizeTodos();
+            }}
+          />
+        </Col>
+      </Row>
     </Container>
   );
 };
