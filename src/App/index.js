@@ -49,7 +49,7 @@ const App = () => {
             {error && <p>Hubo un error</p>}
             {loading && <SkeletoLoader />}
             {!loading && !searchedTodos.length && <p>Crea tu primer TODO</p>}
-            {searchedTodos.map((todo, index) => (
+            {!loading && searchedTodos.map((todo, index) => (
               <TodoItem
                 key={index}
                 text={todo.text}

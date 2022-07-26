@@ -1,14 +1,10 @@
 import React from "react";
 import { withStorageListener } from "./withStorageListener";
+import { AlertModal } from "./AlertModal";
 
 function ChangeALert({ show, toggleShow }) {
   if (show) {
-    return (
-      <div>
-        <p>Hubo un cambio!</p>
-        <button onClick={ () => toggleShow()}>Volver a cargar la informacion</button>
-      </div>
-    );
+    return <AlertModal show={show} toggleShow={toggleShow} />;
   }
   return null;
 }
